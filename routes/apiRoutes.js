@@ -1,13 +1,13 @@
 const router = require('express').Router();
 
-const storage = require('../db/storage');
+const Storage = require('../db/storage');
 
 router.get('/api/notes', (req, res) => {
-    storage.getNote()
+    Storage.getNote()
     .then((note) => res.json(note))
 });
 
 router.post('/api/notes', (req, res) => {
-    storage.addNote()
+    Storage.addNote()
     .then((note) => res.json(note))
 });
