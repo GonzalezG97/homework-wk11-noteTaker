@@ -7,7 +7,7 @@ router.get('/api/notes', (req, res) => {
     .then((note) => res.json(note))
 });
 
-router.post('/api/notes', (req, res) => {
+router.post('/api/notes/', (req, res) => {
     Storage.addNote()
     .then((note) => res.json(note))
 });
