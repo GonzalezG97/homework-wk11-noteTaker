@@ -1,7 +1,7 @@
 // Allows us to do file operations
 const fs = require("fs");
 // Assigns unique ID
-const uuid = require("uuid/v1");
+const {v1: uuidv1} = require("uuid");
 
 const util = require("util");
 // Takes a function following the common error-first callback style, i.e. taking a (err, value) => ... callback as the last argument, and returns a version that returns promises.
@@ -27,7 +27,7 @@ class Storage {
   addNote(note) {
     const { title, text } = note;
     // This is creating a new note with its own unique ID
-    const newNote = { title, text, id: uuid() };
+    const newNote = { title, text, id: uuidv1() };
 
     return (
       this.getNote()
