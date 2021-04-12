@@ -8,7 +8,8 @@ router.get('/api/notes', (req, res) => {
 });
 
 router.post('/api/notes/', (req, res) => {
-    Storage.addNote()
+    const newNote = req.body;
+    Storage.writeNote(newNote)
     .then((note) => res.json(note))
 });
 
