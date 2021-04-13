@@ -1,12 +1,10 @@
 // Allows us to do file operations
 const fs = require("fs");
-// Assigns unique ID
-const {v1: uuidv1} = require("uuid");
-
 const util = require("util");
+// Assigns unique ID
+const { v1: uuidv1 } = require("uuid");
 // Takes a function following the common error-first callback style, i.e. taking a (err, value) => ... callback as the last argument, and returns a version that returns promises.
 const writeFile = util.promisify(fs.writeFile);
-
 const readFile = util.promisify(fs.readFile);
 
 class Storage {

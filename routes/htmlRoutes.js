@@ -1,17 +1,16 @@
-const router = require('express').Router();
-const path = require('path');
-const fs = require('fs');
+// Dependencies
+const router = require("express").Router();
+const path = require("path");
+const fs = require("fs");
 
-
-
-const PORT = process.env.PORT || 8080;
-
+// Route to default page
 router.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
+// Route to the notes page
 router.get("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/notes.html"));
+  res.sendFile(path.join(__dirname, "../public/notes.html"));
 });
 
 module.exports = router;
